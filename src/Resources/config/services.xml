@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="devcube.service.service_one.class">Devcube\Bundle\MyTestBundle\Service\DevcubeSimpleOneService</parameter>
+        <parameter key="devcube.service.service_two.class">Devcube\Bundle\MyTestBundle\Service\DevcubeSimpleTwoService</parameter>
+    </parameters>
+
+    <services>
+        <service id="devcube.service.service_one" class="%devcube.service.service_one.class%" />
+        <service id="devcube.service.service_two" class="%devcube.service.service_two.class%" />
+        <service id="Devcube\Bundle\MyTestBundle\Service\DevcubeSimpleTwoServiceInterface" alias="devcube.service.service_two">
+
+        </service>
+    </services>
+</container>
